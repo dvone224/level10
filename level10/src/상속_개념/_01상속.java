@@ -8,7 +8,7 @@ package 상속_개념;
 
 // 1. 캡슐화(encapsulation) : 객체를 독립적으로 만든다. private 필드, getter, setter
 // 2. 상속(inheritance) : 자식 클래스가 부모 클래스의 속성(필드 + 메서드)을 상속 받는다
-// 3. 추상화(abstract) :
+// 3. 추상화(abstract) : 미완성된 메서드가 단 한 개라도 존재하면 추상클래스 <-> 구체화
 // 4. 다형성(polymorphism) : 
 
 class A {
@@ -38,6 +38,8 @@ class C extends A{
 	int e = 50;
 	int f = 60;
 	
+	int a = 23412;
+	
 
 	C() {
 		// super(); 먼저 부모를 생성한다, super() 부모생성자 호출
@@ -55,9 +57,9 @@ class C extends A{
 	}
 	
 	void printA() {
-		a = 10123;
 		System.out.println(a);
 		System.out.println(b);
+		System.out.println(super.a);
 	
 	}
 	
@@ -78,5 +80,6 @@ public class _01상속 {
 		C c = new C(10,20);
 		c.printA();
 		System.out.println(c.a);
+		
 	}
 }
