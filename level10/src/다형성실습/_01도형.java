@@ -1,6 +1,5 @@
 package 다형성실습;
 
-import java.nio.file.spi.FileSystemProvider;
 import java.util.Random;
 
 abstract class Shape {
@@ -57,7 +56,7 @@ class Circle extends Shape {
 	Circle(String name, String color, int radius) {
 		super(name, color);
 		this.radius = radius;
-		size = radius * 3.14;
+		size = Math.PI * radius * radius;
 	}
 
 	@Override
