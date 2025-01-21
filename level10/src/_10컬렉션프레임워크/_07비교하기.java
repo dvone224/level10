@@ -1,6 +1,7 @@
 package _10컬렉션프레임워크;
 
 import java.util.Comparator;
+import java.util.Set;
 import java.util.TreeSet;
 
 // compareable - 자신과 다른 객체 비교 
@@ -37,7 +38,7 @@ class Person implements Comparable<Person> {
 	public int compareTo(Person o) {
 		//return name.compareTo(o.name);
 		
-		if(age > o.age) {
+		if(no > o.no) {
 			return 1;
 		}else {
 			return -1;
@@ -95,29 +96,24 @@ public class _07비교하기 {
 				 new Person ("개똥이" , 23)	
 		};
 		
-		TreeSet[] treeSets =  {
+		Set[] treeSets =  {
 			new TreeSet<>(),
-			new TreeSet<>( new PersonComp(PersonComp.SortBy.NO, PersonComp.SortDir.DESC)),
-			new TreeSet<>( new PersonComp(PersonComp.SortBy.AGE, PersonComp.SortDir.ASC)),
-			new TreeSet<>( new PersonComp(PersonComp.SortBy.NAME, PersonComp.SortDir.DESC)),
+//			new TreeSet<>( new PersonComp(PersonComp.SortBy.NO, PersonComp.SortDir.DESC)),
+//			new TreeSet<>( new PersonComp(PersonComp.SortBy.AGE, PersonComp.SortDir.ASC)),
+//			new TreeSet<>( new PersonComp(PersonComp.SortBy.NAME, PersonComp.SortDir.DESC)),
 		};
 		
+//		TreeSet test = new TreeSet<E>(null)
 		for(Person p : pList) {
-			for(TreeSet ts : treeSets) {
+			for(Set ts : treeSets) {
 				ts.add(p);
 			}
 		}
 		
-		for(TreeSet ts : treeSets) {
-			for(Object p : ts) {
-				System.out.println(p);
-			}
-			System.out.println("------------------");
-		}
 		
 		System.out.println("=============");
 		
-		for(TreeSet ts : treeSets) {
+		for(Set ts : treeSets) {
 			for(Object p : ts) {
 				System.out.println(p);
 			}

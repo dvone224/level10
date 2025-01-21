@@ -14,6 +14,9 @@ public class _03arrayListVSLinkedList {
 		
 		long startTime=0, endTime=0;
 		
+		
+		
+		
 		//@1-1 ArrayList 데이터 추가시간
 		startTime = System.nanoTime();
 		for(int i=0; i<100000; i++) {
@@ -21,6 +24,23 @@ public class _03arrayListVSLinkedList {
 		}		
 		endTime = System.nanoTime();
 		System.out.printf("ArrayList  데이터 추가시간 = %10d ns\n", endTime-startTime);
+		
+		startTime = System.nanoTime();
+		List<Integer> lL = new LinkedList<Integer>(aList);
+		endTime = System.nanoTime();
+		System.out.printf("ArrayList to LinkedList 시간 = %10d ns\n", endTime-startTime);
+		
+		startTime = System.nanoTime();
+		List<Integer> aL = new ArrayList<Integer>(lL);
+		endTime = System.nanoTime();
+		System.out.printf("LinkedList to ArrayList 시간 = %10d ns\n", endTime-startTime);
+		
+		startTime = System.nanoTime();
+		lL = new LinkedList<Integer>(aL);
+		endTime = System.nanoTime();
+		System.out.printf("ArrayList to LinkedList 시간 = %10d ns\n", endTime-startTime);
+		
+		
 		
 		//@1-2 LinkedList 데이터 추가시간
 		startTime = System.nanoTime();
