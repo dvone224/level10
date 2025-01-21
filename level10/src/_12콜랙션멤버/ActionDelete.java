@@ -16,6 +16,7 @@ public class ActionDelete implements Action{
 		if(id == null) {
 			return;
 		}
+		
 		System.out.printf("%s 삭제 완료\n",dao.getMemberMap().remove(id));
 	}
 

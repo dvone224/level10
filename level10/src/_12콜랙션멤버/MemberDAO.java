@@ -1,6 +1,9 @@
 package _12콜랙션멤버;
 
 import java.util.HashMap;
+import java.util.TreeSet;
+
+import _12콜랙션멤버.MemberComp.SortBy;
 
 /**
  * 
@@ -53,6 +56,24 @@ public class MemberDAO {
 			return null;
 		}
 		return id;
+	}
+	
+	public TreeSet<Member> getTreeSoryBy(String sort){
+		SortBy sortBy = null;
+		if(sort.equals("id")) {
+			sortBy = MemberComp.SortBy.ID;
+		}else if(sort.equals("name")) {
+			sortBy = MemberComp.SortBy.NAME;
+		}
+		TreeSet<Member> treeSet = new TreeSet<Member>(new MemberComp(sortBy));
+		for (Member member : memberMap.values()) {
+			treeSet.add(member);
+		}
+		return null;
+	}
+	
+	public void removeById() {
+		
 	}
 	
 	

@@ -12,11 +12,7 @@ public class AcitonPrint implements Action{
 			System.out.println("데이터가 없습니다");
 			return;
 		}
-		TreeSet<Member> printSet = new TreeSet<Member>(new MemberComp(MemberComp.SortBy.NAME));
-		for(Member member : dao.getMemberMap().values()) {
-			printSet.add(member);
-		}
-		for(Member member : printSet) {
+		for(Member member : dao.getTreeSoryBy("name")) {
 			System.out.println(member);
 		}
 	}
